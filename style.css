@@ -1,0 +1,329 @@
+/* =============================
+   Global Reset
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #2f2f2f; /* gray background for all pages */
+  color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+/* =============================
+   Smoke Background (Optional)
+============================= */
+#smokeCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* stays behind */
+  background: transparent; /* keep gradient visible */
+}
+
+/* =============================
+   Navigation Bar
+============================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #fff, #00f0ff);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: #00f0ff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =============================
+   Hero Section
+============================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, #ffffff, #ff00ff, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite alternate;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 25px #00f0ff, 0 0 40px #ff00ff;
+  }
+}
+
+/* =============================
+   Sections
+============================= */
+section {
+  padding: 100px 10%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffffff, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* =============================
+   Buttons
+============================= */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 1);
+}
+
+/* =============================
+   Footer
+============================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =============================
+   Contact Page Styling
+============================= */
+.contact-page {
+  max-width: 650px;
+  margin: 120px auto;
+  padding: 40px 30px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #4f4f4f; /* gray background for contact box */
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+  color: #f0f0f0;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+/* Instagram and Gmail Links */
+.contact-page a.instagram-link {
+  color: #E1306C;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 0 6px #E1306C;
+  transition: 0.3s;
+}
+
+.contact-page a.instagram-link:hover {
+  color: #ff66aa;
+  text-shadow: 0 0 12px #ff66aa, 0 0 20px #E1306C;
+}
+
+.contact-page a.gmail-link {
+  color: #D44638;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 0 6px #D44638;
+  transition: 0.3s;
+}
+
+.contact-page a.gmail-link:hover {
+  color: #ff7a66;
+  text-shadow: 0 0 12px #ff7a66, 0 0 20px #D44638;
+}
+
+/* Contact Form Labels */
+.contact-form label {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Input Fields & Textarea */
+.contact-form input,
+.contact-form textarea {
+  font-size: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 0 0 12px #ff00ff, 0 0 20px #00f0ff;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.contact-form button {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #ff00ff, #00f0ff);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 15px rgba(0, 240, 255, 0.6);
+}
+
+/* Response Message */
+#responseMsg {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #00f0ff;
+  text-shadow: 0 0 6px #00f0ff;
+}
+
+/* Subtle neon pulse background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0,240,255,0.05), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: neonPulse 6s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.12; }
+  100% { opacity: 0.05; }
+}
+.feature-card {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #00f0ff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00f0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #ff00ff, 0 0 20px #00f0ff;
+}
+
+

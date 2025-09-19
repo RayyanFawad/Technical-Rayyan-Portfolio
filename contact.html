@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnicalRayyan - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="smokeCanvas"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">⚡ TechnicalRayyan</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="shop.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header> 
+
+  <!-- Contact Section -->
+  <section class="contact-page">
+    <h1>Contact Me</h1>
+    <p>Email: <a href="mailto:rayyanfawad78@gmail.com" class="gmail-link">rayyanfawad78@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/mal1k_rayyan" target="_blank" class="instagram-link">@mal1k_rayyan</a></p>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Response Message -->
+    <p id="responseMsg"></p>
+  </section>
+
+  <!-- JavaScript for AJAX Contact Form -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+      };
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await res.json();
+        document.getElementById("responseMsg").innerText = data.msg;
+        document.getElementById("responseMsg").style.color = data.success ? "lime" : "red";
+      } catch (err) {
+        document.getElementById("responseMsg").innerText = "❌ Something went wrong. Please try again.";
+        document.getElementById("responseMsg").style.color = "red";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

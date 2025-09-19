@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnicalRayyan - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Responsive Fixes ===== */
+    .hero {
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero img {
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .feature-grid, 
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature-card, .service-card {
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,240,255,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover, .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Navbar mobile */
+    .navbar {
+      flex-wrap: wrap;
+    }
+
+    .navbar .LOGO {
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border-radius: 30px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Make text more mobile friendly */
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+  </style>
+</head>
+<body>
+  <!-- Smoke Background -->
+  <canvas id="smokeCanvas"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="LOGO"> ⚡TechnicalRayyan </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="shop.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="rtt.png" alt="Hero Image">
+    <h1 id="typing-text"></h1>
+    <p>Professional web development services from a young passionate developer.</p>
+    <a href="shop.html" class="btn">Explore Services</a>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose Me?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Custom Websites</h3>
+        <p>Get websites tailored to your exact needs with futuristic design.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Fast Delivery</h3>
+        <p>One Man, One PC, unlimited websites—high-performance development without delays.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Affordable Prices</h3>
+        <p>Professional services at prices everyone can afford in Pakistan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>My Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>🌐 Portfolio Websites</h3>
+        <p>Personal or professional portfolios with stunning, futuristic designs to showcase your work.</p>
+      </div>
+      <div class="service-card">
+        <h3>🛒 E-Commerce Stores</h3>
+        <p>Fully functional online stores with secure payment integration and modern UI/UX.</p>
+      </div>
+      <div class="service-card">
+        <h3>🏢 Business Websites</h3>
+        <p>Custom websites to represent your business and attract customers with a professional look.</p>
+      </div>
+      <div class="service-card">
+        <h3>⚡ Fast Hosting & Deployment</h3>
+        <p>I help host and deploy your site on fast, reliable servers with smooth performance.</p>
+      </div>
+    </div>
+    <a href="shop.html" class="btn">View All Services</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>TechnicalRayyan is dedicated to building modern, high-performance, and futuristic websites that empower businesses and individuals in Pakistan and worldwide.  
+       At just 15, I combine passion, creativity, and cutting-edge technology to deliver web solutions that stand out. Whether you need a personal portfolio, an e-commerce store, or a business website, I bring your vision to life with innovation and style.</p>
+    <p>© 2025 TechnicalRayyan | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
